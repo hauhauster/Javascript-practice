@@ -1,0 +1,36 @@
+        *{
+            margin:0;
+            padding:0;
+        }
+        body, html {height: 100%}
+        #background5{
+				background-image: url('../images/p05_mini.jpg');
+    			min-height: 100%;
+    			background-position: center;
+    			background-size: cover;
+		}
+        .bigimg{
+            width:500px;
+            height:333px;
+            /*margin:auto;*/
+
+        }
+        .numimg{
+            width:50px;
+           
+        }
+        .playimg{
+            width:50px;
+           
+        }
+        .picdiv{
+             width:500px;
+            margin:auto;
+            /*border:1px solid black;*/
+        }
+        .nodiv{
+            width:160px;
+            margin:auto;
+            /*background-color:rgba(0%, 0%, 100%, 0.1);*/
+            /*border:1px solid black;*/
+        }

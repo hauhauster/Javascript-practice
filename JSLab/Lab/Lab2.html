@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="author" content="洪英皓"/>
+	<meta name="keywords" content="HTML,CSS,JavaScript"/>
+    <title>表單</title>
+	<meta charset="utf-8" />
+    <link rel="stylesheet" href="../styles/Lab2.css">
+    <link rel="stylesheet" href="../styles/索引.css">
+    <link rel="stylesheet" href="../styles/Lab1.css">
+    <style>
+       
+    </style>
+</head>
+<body>
+    <div id="background3">
+        <div id="allpage">
+        <ul id="menu">
+            <li><a href="../index.html">HOME</a></li>
+            <li><a href="Lab1.html">99乘法</a></li>
+            <li><a href="Lab2.html">表單</a></li>
+            <li><a href="Lab3.html">評點</a></li>
+            <li><a href="Lab4.html">廣告輪播</a></li>
+            <li><a href="Lab5.html">日曆</a></li>
+        </ul>
+        <div id="content">
+        <form action="#" method="get" enctype="multipart/form-data">
+        <fieldset>
+            <legend style="color:goldenrod;font-weight: bolder">Form Check<em>(必填)</em></legend>
+            <div class="t1">
+                <span class="sp">
+                    <label class="s1" for="account">姓名:</label>
+                    <input type="text" id="account" name="accountName" size="25" autocomplete="off" placeholder="guest" autofocus>
+                </span>
+                <span id="idsp"></span><br />
+                <div class="div1">(1不可空白，2至少2個字以上，3必須全部為中文字 )</div>
+            </div>
+            <div class="t1">
+                <span class="sp">
+                    <label class="s1" for="pwd1">密碼:</label>
+                    <input type="password" id="pwd1" name="accountpwd" size="25" autocomplete="off" placeholder="請輸入密碼" autofocus>
+                </span>
+                    <span id="idsp2"></span><br />
+                <div class="div1">(1不可空白，2至少6個字且必須包含英文字母、數字、特殊字元[!@#$%^&*])</div>
+            </div>
+            <div class="t1">
+                <span class="sp">
+                <label class="s1" for="setdate">日期:</label><input type="text" id="setdate" name="theDate"  placeholder="2017/01/24" size="25">
+                </span>
+                <span id="idsp3"></span><br />
+                <div class="div1">格式:西元年/月/日 yyyy/MM/dd</div>
+            </div>
+        	<div class="sub">
+				<input type="submit" value="送出" onclick="checkName()">
+				<input type="reset" value="清除">
+			</div>
+        </fieldset>
+    </form>
+    </div>
+    </div>
+    </div>
+	<script>
+		 window.onload = function (){
+		 	document.getElementById("account").onblur = checkName;
+		 	document.getElementById("pwd1").onblur = checkPassword;
+		 	document.getElementById("setdate").onblur = isDate;
+		 };
+		 //判斷姓名格式
+		 function checkName() {
+		   var theName = document.getElementById("account").value;
+		   var re = /^[\u4e00-\u9fa5]{2,}$/;
+		   	if(re.test(theName))
+		   		document.getElementById("idsp").innerHTML = "<span style=color:black><img src='../images/tick.png' />正確</span>";
+		   	else{
+		   	if(theName == "")
+		   		document.getElementById("idsp").innerHTML = "<span style=color:red><img src='../images/error.png'/>you must enter</span>";
+		   	else
+		   		document.getElementById("idsp").innerHTML = "<span style=color:red><img src='../images/error.png'/>輸入格式不符</span>";
+		   }
+		}
+		//判斷密碼
+		function checkPassword() {
+		   var thePwd = document.getElementById("pwd1").value;
+		   var re = /^.*(?=.{6,})(?=.*\d)(?=.*[a-zA-Z])(?=.*[!@#$%^&*]).*$/;
+		   if (thePwd == "")
+		       document.getElementById("idsp2").innerHTML = "<span style=color:red><img src='../images/error.png'/>you must enter</span>";
+            else{
+		        if (re.test(thePwd))
+		   		document.getElementById("idsp2").innerHTML = "<span style=color:black><img src='../images/tick.png' />正確</span>";
+		   	    else
+		   		document.getElementById("idsp2").innerHTML = "<span style=color:red><img src='../images/error.png'/>輸入格式不符</span>";
+		   }
+		}
+		//判斷日期
+		function isDate() {
+		   var theDate = document.getElementById("setdate").value;
+		   var re = /^[0-9]{4}\/[0-9]{2}\/[0-9]{2}$/;
+		   if(re.test(theDate)){
+		   		if (new Date(theDate).getDate() == theDate.substring(theDate.length - 2)) {
+                    document.getElementById("idsp3").innerHTML = "<span style=color:black><img src='../images/tick.png' />正確</span>";
+                } 
+                else {
+                    document.getElementById("idsp3").innerHTML = "<span style=color:red><img src='../images/error.png'/>錯誤日期</span>";
+                }
+		   }
+		   else
+		   	{	if(theDate == "")
+		   			document.getElementById("idsp3").innerHTML = "<span style=color:red><img src='../images/error.png'/>未輸入日期</span>";
+		   		else
+		   		document.getElementById("idsp3").innerHTML = "<span style=color:red><img src='../images/error.png'/>輸入格式不符</span>";
+			}
+		}
+	</script>
+</body>
+</html>

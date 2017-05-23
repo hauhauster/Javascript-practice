@@ -1,0 +1,35 @@
+*{
+	margin:0;
+	padding:0;
+}
+#background2{
+				background-image: url('../images/sample2_mini.jpg');
+    			min-height: 100%;
+    			background-position: center;
+    			background-size: cover;
+		}
+#content{
+		 padding-top:100px;
+		/* border:3px solid black;*/
+		 overflow: auto;
+		}
+#t1{border:	rgba(30,200,150,1) solid 5px;
+	width:700px;
+	margin: 0 auto;
+	border-collapse: collapse;
+	}
+td{border:	rgba(30,200,150,1) solid 5px;
+	text-align:center;
+	width:100px;
+	color:#ffffff;
+	font-family: "Brush Script MT", cursive;
+	/*background-color:#CCEEFF;*/
+	background-color:rgba(23, 23, 23, 0.3);
+	height:200px;
+	}
+th{ color:#ffffff;
+	font-family: "Brush Script MT", cursive;
+	font-size:18pt;
+	height:70px;
+	background-color:rgba(23, 23, 23, 0.3);
+	text-align:center;}

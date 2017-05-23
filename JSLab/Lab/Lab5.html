@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html >
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Lab5</title>
+    <link rel="stylesheet" href="../styles/Lab5.css">
+    <link rel="stylesheet" href="../styles/索引.css">
+    <link rel="stylesheet" href="../styles/Lab1.css">
+    <script type="text/javascript">
+        //var d = new Date(2012, 2, 0);
+        //alert(d);
+        window.onload=function(){
+        	/*新增年*/
+            for (i = 2010; i <= 2020; i++) {   
+                var opt = window.document.createElement("option");
+                opt.setAttribute("value", i);
+                var optName = document.createTextNode(i);
+                opt.appendChild(optName);
+                //opt.value = i;
+                //opt.innerHTML = i;
+                document.getElementById('idSelectYear').appendChild(opt);
+            }    
+            /*新增月 */
+            for (i = 1; i <= 12; i++) {   
+                var opt = window.document.createElement("option");
+                opt.setAttribute("value", i);
+                var optName = document.createTextNode(i);
+                opt.appendChild(optName);
+                //opt.value = i;
+                //opt.innerHTML = i;
+                document.getElementById('idSelectMonth').appendChild(opt);
+            }
+            /*預設天數*/
+        	for (i = 1; i <= 31; i++) {   
+                var opt = window.document.createElement("option");
+                opt.setAttribute("value", i);
+                var optName = document.createTextNode(i);
+                opt.appendChild(optName);
+                //opt.value = i;
+                //opt.innerHTML = i;
+                document.getElementById('idSelectDay').appendChild(opt);
+            }           
+            document.getElementById("idSelectYear").onchange= setTheDate;
+            document.getElementById("idSelectMonth").onchange= setTheDate;	
+        	document.getElementById("idSelectDay").onchange= showTheDate;
+        };
+       function setTheDate () {
+              document.getElementById("idSelectDay").innerHTML = "";
+               year = document.getElementById("idSelectYear").value;
+               month = document.getElementById("idSelectMonth").value;
+              var dateObj = new Date(year,month,0);
+              var theDay = dateObj.getDate();
+              	/*新增天數*/
+              	for (i = 1; i <= theDay; i++) {   
+                var opt = window.document.createElement("option");
+                opt.setAttribute("value", i);
+                var optName = document.createTextNode(i);
+                opt.appendChild(optName);
+                //opt.value = i;
+                //opt.innerHTML = i;
+                document.getElementById('idSelectDay').appendChild(opt);
+            }
+       		document.getElementById("show").innerHTML = "<p>你選擇的日期是"+year+"年"+month+"月1日</p>";
+       }
+       function showTheDate(){
+           day = document.getElementById('idSelectDay').value;
+           year = document.getElementById("idSelectYear").value;
+           month = document.getElementById("idSelectMonth").value;
+            document.getElementById("show").innerHTML = "<p>你選擇的日期是"+year+"年"+month+"月"+day+"日</p>";  
+       		}
+	</script>
+	</head>
+<body>
+    <div id="background6">
+        <div id="allpage">
+            <ul id="menu">
+                <li><a href="../index.html">HOME</a></li>
+                <li><a href="Lab1.html">99乘法</a></li>
+                <li><a href="Lab2.html">表單</a></li>
+                <li><a href="Lab3.html">評點</a></li>
+                <li><a href="Lab4.html">廣告輪播</a></li>
+                <li><a href="Lab5.html">日曆</a></li>
+            </ul>
+            <div id="content">
+                <div id="mydate">
+                    <select id="idSelectYear"></select>
+                    <select id="idSelectMonth"></select>
+                    <select id="idSelectDay"></select>
+                </div>
+                <div id="show"><p>你選擇的日期是2010年1月1日</p></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

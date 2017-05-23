@@ -1,0 +1,46 @@
+*{margin:0;
+          padding:0;
+        }
+        body, html {height: 100%}
+        #background3{
+				background-image: url('../images/guth_mini.jpg');
+    			min-height: 100%;
+    			background-position: center;
+    			background-size: cover;
+		}
+        .t1 {   //border:black solid 1px;
+				width:450px;
+				border-bottom:1px solid #e0e0e0;
+				margin:20px;
+				//padding-top:30px;
+                padding-bottom:30px;
+			}
+        .s1 {   
+				width:100px;
+				float:left;
+				text-align:right;
+				padding-right:3px;
+			}
+        fieldset {
+			background-color:white;
+			width:500px;
+			margin:15px;
+			border:1px solid rgba(30,200,150,1);
+			border-radius:15px;
+            margin:auto;
+            /*padding:100px;*/
+		}
+		.sub {
+				width:450px;
+				margin:20px;
+				text-align:center;
+			}
+		
+        .sp{
+            line-height:30px;
+        }
+        .div1{
+				font-size:10pt;
+				text-align:center;
+                color:darkgrey;
+        }	

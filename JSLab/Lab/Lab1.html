@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html lang="zh-tw">
+	<head>
+	<meta charset="UTF-8" />
+	<meta name="author" content="洪英皓"/>
+	<meta name="keywords" content="HTML,CSS,JavaScript"/>
+	<!--<meta name="date" content="2016/12/20"/>
+	<meta name="description" content="HTML練習1"/>
+	<meta http-equiv="refresh" content="20; URL=*.html"/>-->
+	<title>99乘法</title>
+		<style>
+		/*CSS*/
+		@import url('../styles/索引.css'); 
+		@import url('../styles/Lab1.css'); 
+		</style>	
+	<link rel="Shortcut Icon" type="image/x-icon" href="../images/icon_storeManager.gif"/> <!-- Icon-->
+	</head>
+	<body>
+		<div id="background2">
+		<div id="allpage">  <!--索引-->
+			<header>
+				<nav>
+					<ul id="menu">
+						<li><a href="../index.html">HOME</a></li>
+						<li><a href="Lab1.html">99乘法</a></li>
+						<li><a href="Lab2.html">表單</a></li>
+						<li><a href="Lab3.html">評點</a></li>
+						<li><a href="Lab4.html">廣告輪播</a></li>
+						<li><a href="Lab5.html">日曆</a></li>
+					</ul>
+				</nav>
+			</header>		
+		<div id="content">
+		<table id="t1">
+			<script>	
+    			var mul = new Object();
+    			mul.fun = function (a){
+				  	for(var j=1;j<10;j++)
+					document.write(a+"*"+j+"="+a*j+"<br>");
+				}; 
+    			
+    			document.write("<tr>");
+    			document.write("<th colspan='8'><h3>Multiplication Table</h3></th>");
+    			
+    			document.write("<tr>");
+    			for(var i =2;i<10;i++){
+    				document.write("<td>");
+    				mul.fun(i);				
+				}
+				
+			</script>
+		</table>
+		</div> <!--content end-->
+	</div> <!--allpage end-->
+	</div>
+	</body>
+</html>

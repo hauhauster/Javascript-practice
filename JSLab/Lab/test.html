@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+	<head>
+		<meta charset="utf-8" />
+		<title>TEST</title>
+		<!--    匯入jQuery    -->
+    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            
+            //根據捲軸的位置改變右方導覽列游標的顏色
+            $(window).scroll(function(){
+                 if($(window).scrollTop()>=$(".p01").offset().top && $(window).scrollTop()<$(".p02").offset().top){
+                    $(".nav li").css("background-color","white")//除了被點擊到的游標，其他都恢復成原來的顏色
+                    $(".nav li:eq(0)").css("background-color","#46dd46")
+                }else if($(window).scrollTop()>=$(".p02").offset().top && $(window).scrollTop()<$(".p03").offset().top){
+                    $(".nav li").css("background-color","white")//除了被點擊到的游標，其他都恢復成原來的顏色
+                    $(".nav li:eq(1)").css("background-color","#46dd46")
+                }else if($(window).scrollTop()>=$(".p03").offset().top && $(window).scrollTop()<$(".p04").offset().top){
+                    $(".nav li").css("background-color","white")//除了被點擊到的游標，其他都恢復成原來的顏色
+                    $(".nav li:eq(2)").css("background-color","#46dd46")
+                }else if($(window).scrollTop()>=$(".p04").offset().top && $(window).scrollTop()<$(".p05").offset().top){
+                    $(".nav li").css("background-color","white")//除了被點擊到的游標，其他都恢復成原來的顏色
+                    $(".nav li:eq(3)").css("background-color","#46dd46")
+                }else if($(window).scrollTop()>=$(".p05").offset().top && $(window).scrollTop()<$(".p06").offset().top){
+                    $(".nav li").css("background-color","white")//除了被點擊到的游標，其他都恢復成原來的顏色
+                    $(".nav li:eq(4)").css("background-color","#46dd46")
+                }else if($(window).scrollTop()>=$(".p06").offset().top){
+                    $(".nav li").css("background-color","white")//除了被點擊到的游標，其他都恢復成原來的顏色
+                    $(".nav li:eq(5)").css("background-color","#46dd46")
+                }
+            })
+                     
+            //點選右方導覽列時會到指定圖片
+            var num_li=$("li").length
+            for(i=0;i<=num_li;i++){
+                $(".nav li:eq("+i+")").click({id:i},function(e){
+                    $("html,body").stop()
+                    $(".nav li").css("background-color","white")//除了被點擊到的游標，其他都恢復成原來的顏色
+                    page=e.data.id+1
+                    $("html,body").animate({"scrollTop":$(".p0"+page).offset().top})
+                    $(".nav li:eq("+e.data.id+")").css("background-color","#46dd46")//被點擊到的游標變色，前面的selector用this也可以
+                })
+            }
+            //一進入網頁時，將導覽列垂直置中計算導覽列置中的位置
+           center()
+            
+           //縮放網頁時，將導覽列垂直置中
+            $(window).resize(function(){
+                center()
+            })
+            
+            //計算導覽列垂直置中的高度
+            function center(){
+                pos=$(window).height()/2-$(".nav").height()/2
+                $(".nav").css("top",pos)
+            }
+            
+        })
+    </script>
+
+		<style>/*css write here*/
+		*{margin:o;
+			padding: 0;
+			border:none;
+			}
+		body {
+  			 height:100%;
+			}
+		.p01{
+			background-image: url('../images/sample_bg.jpg');
+			background-size: cover;
+			height: 100vh;
+		}
+		.p02{
+			background-image: url('../images/sample2_mini.jpg');
+			background-size: cover;
+			height: 100vh;
+		}
+		.p03{
+			background-image: url('../images/p01_mini.jpg');
+			background-size: cover;
+			height: 100vh;
+		}
+		.p04{
+			background-image: url('../images/p02_mini.jpg');
+			background-size: cover;
+			height: 100vh;
+		}
+		.p05{
+			background-image: url('../images/p03_mini.jpg');
+			background-size: cover;
+			height: 100vh;
+		}
+		.p06{
+			background-image: url('../images/p04_mini.jpg');
+			background-size: cover;
+			height: 100vh;
+		}
+		.nav{
+			position: fixed;
+			top:50%;
+			right:0px;
+		}
+		li{
+			width:10px;
+			height: 10px;
+			margin: 10px;
+			background-color: white;
+			border-radius: 5px;
+			box-shadow: 1px 1px 1px rgba(0,0,0,0.5) inset,-1px -1px 1px	rgba(0,0,0,0.5) inset;
+			list-style-type: none;
+			}
+		</style>
+		<script>
+			//Javascript code
+		</script>
+	</head>
+	<body>
+	
+		<div>
+			<div class="nav">
+			<ul>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+			</div>
+			<div class="p01"></div>
+			<div class="p02"></div>
+			<div class="p03"></div>
+			<div class="p04"></div>
+			<div class="p05"></div>
+			<div class="p06"></div>
+		</div>
+	</body>
+</html>

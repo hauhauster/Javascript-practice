@@ -1,0 +1,29 @@
+       *{
+            margin:0;
+            padding:0;
+        }
+        body, html {
+            height: 100%
+
+        }
+         select{
+            width:100px;
+            font-size:20px;
+        }
+        #background6{
+				background-image: url('../images/p04_mini.jpg');
+    			min-height: 100%;
+    			background-position: center;
+    			background-size: cover;
+		}
+        #show{
+            color:white;
+            font-size:30px;
+            float:right;
+            background-color:rgba(0, 255, 255,0.4);
+        }
+        #mydate{
+            float:left;
+            
+        }
+       

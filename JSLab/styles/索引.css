@@ -1,0 +1,50 @@
+		body, html {height: 100%}
+		*{margin:0;
+		  padding:0;
+		 }
+			#name {
+  		padding-top:100px;
+  		position: relative;
+ 		height: 120px;
+  		top: 0;
+  		transition: all 0.2s ease 0s;
+  		width: 100%;
+		}
+		
+		/*.row {
+		height: 120px;
+		border:black solid 1px;
+  		margin-left: -20px;
+  		margin-right: -20px;
+		}*/
+		#background{
+				background-image: url('../images/sample_bg.jpg');
+    			min-height: 100%;
+    			background-position: center;
+    			background-size: cover;
+		}
+		
+		#allpage{width: 1000px; 
+				margin:auto; 
+				padding-top: 20px;
+				}
+		#menu{width:100%;
+			  list-style-type:none; 
+			  background-color: rgba(23, 23, 23, 0.5) ; 
+			  color:white;
+			  overflow: auto;
+			  border-radius:15px;
+			  }	
+		#menu li{float:left; 
+				 width:7em; 
+				 border-right:1px solid #cccccc}
+		#menu li a {
+					width:100%;
+					display:block;
+					text-align:center;
+					line-height:2.5em;
+					text-decoration:none;
+					}
+		#menu li a:visited{color:white;}
+		#menu li a:hover{color:rgba(30,200,150,1);background-color: rgba(0, 50, 50, 0.5)}
+	
